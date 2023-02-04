@@ -2,7 +2,8 @@
 
 ## Solution 1
 
-O( 
+O(
+ 
 
 # Notes 
 
