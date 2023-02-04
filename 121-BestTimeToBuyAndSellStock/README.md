@@ -4,7 +4,6 @@
 
 O( n ) where n is the number of elements in the given list
 
-
 # Notes
 
 ## Solution 1
