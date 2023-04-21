@@ -1,18 +1,28 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):234. Palindrome Linked List
+
+#         self.val = val
+#         self.next = next
 class Solution:
-    def isValid(self, s: str) -> bool:
-            left = []
-            for i in s:
-                if i in ['(', '{', '[']:
-                    left.append(i)
-                elif i == ')' and len(left) != 0 and  left[-1] == '(':
-                    left.pop()
-                elif i == '}' and len(left) != 0 and left[-1] == '{':
-                    left.pop()
-                elif i == ']' and len(left) != 0 and left[-1] == "[":
-                    left.pop()
-                else:
-                    return False
-            if len(left) == 0:
-                return True
-            else:
-                return False
+    def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+
+        cur = head
+        pre = None
+
+        while cur:
+
+            if cur.val == val:
+                if pre:
+                    pre.next = cur.next
+                    cur = cur.next
+                    continue
+                elif not pre:
+                    head = head.next
+                    cur = cur.next
+                    continue
+
+            pre = cur
+            cur = cur.next
+
+        return head
